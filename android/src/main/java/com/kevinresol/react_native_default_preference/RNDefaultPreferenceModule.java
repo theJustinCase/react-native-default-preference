@@ -3,7 +3,6 @@ package com.kevinresol.react_native_default_preference;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import org.json.simple.JSONObject;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -38,11 +37,6 @@ public class RNDefaultPreferenceModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void get(String key, Promise promise) {
     promise.resolve(getPreferences().getString(key, null));
-  }
- 
-  @ReactMethod
-  public void getObject(String key, Promise promise) {
-    promise.resolve(new JSONObject(getPreferences().getString(key, null)));
   }
 
   @ReactMethod
